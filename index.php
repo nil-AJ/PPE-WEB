@@ -53,8 +53,8 @@ include('global.php');
                     uploadMember();
                     break;
 
-                case 'administration_ajou_news':
-                    administration_ajou_news();
+                case 'creation_news':
+                    creation_news();
                     break;
 
 
