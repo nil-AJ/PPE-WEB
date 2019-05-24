@@ -4,7 +4,6 @@ session_start();
 include('controleur/controleur_principal.php');
 include('controleur/controleur_association.php');
 include('controleur/controleur_administration.php');
-include('controleur/controleur_new.php');
 include('global.php');
 
     try

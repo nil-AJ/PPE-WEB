@@ -8,11 +8,11 @@ function uploadMember()
 
         if($_SESSION['user_info']['verification'])
         {
-            include 'model/model_datalist_upload.php';
+            include 'model/upload/model_datalist_upload.php';
 
             if(isset($_FILES['userfile']) && isset($_POST['evenement']) )
             {
-                include 'model/model_media_upload.php' ;
+                include 'model/upload/model_media_upload.php' ;
             }
 
             $GLOBALS['u']->add("view/view_administration/upload.php",1);

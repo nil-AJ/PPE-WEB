@@ -5,5 +5,5 @@
      $use = new Used(['view/navbar-foot/navbar.php','view/navbar-foot/foot.php']);
      $GLOBALS['u'] = $use;
 
-$bdd = new ConnexionBDD('PPE');
+$bdd = new ConnexionBDD('PPE_WAYZONE');
 $GLOBALS['bdd'] = $bdd;
