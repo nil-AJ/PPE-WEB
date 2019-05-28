@@ -1,6 +1,5 @@
 <?php
 
-//
 function uploadMember()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -23,8 +22,6 @@ function uploadMember()
         }
     }
 
-
-//
     function DEconnexion($mode)
     {
         if($mode)//Connexion
@@ -54,7 +51,8 @@ function uploadMember()
         }
         
     }
-//
+    
+    
     function inscription()
     {
         if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -70,7 +68,8 @@ function uploadMember()
             throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
         }
     }
-//
+
+
 function administration_index()
 {
     if(isset($_SESSION['user_info'])) 
@@ -87,7 +86,7 @@ function administration_index()
 }
 
 
-//
+
 function creation_news()
 {
     if(isset($_SESSION['user_info'])) 

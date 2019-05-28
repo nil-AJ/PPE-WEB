@@ -4,6 +4,7 @@ session_start();
 include('controleur/controleur_principal.php');
 include('controleur/controleur_association.php');
 include('controleur/controleur_administration.php');
+include('controleur/controleur_api.php');
 include('global.php');
 
     try
@@ -22,9 +23,7 @@ include('global.php');
                 case 'partenariat':
                     partenariat();
                     break;
-                
-
-                
+                    
                 case 'news':
                     news();
                     break;
@@ -58,12 +57,22 @@ include('global.php');
                     break;
 
 
+
                 default:
                     throw new Exception(404);
                     break;
             }
 
-        }else
+        }elseif( isset($_GET["call_api"]))
+        {
+            if($_GET["call_api"] == "true")
+            {
+                api($_GET);
+            }else{
+                home();
+            }
+        }
+        else
             {
                 home();
             }

@@ -170,7 +170,7 @@
         }
 
 
-        private function showTable($table)
+        protected function showTable($table)
         {
             $rep = [];
             $reponse = $this->createBDD()->query('DESC '.$table);
