@@ -1,13 +1,10 @@
 <footer class="footer-bs mobil-none">
     <div class=" row justify-content-center">
-        <div class="col-3 footer-nav ">
-            <h5>Notre école</h5>
-            <a href="http://www.cfa-insta.fr/"><img src="public/image/logo/CFA_INSTA/cfainsta_new-logo.png"></a>
-        </div>
+
         <div class="footer-nav footer-left">
             <h5>Contact —</h5>
             <div class="col-12">
-                <p>01 43 36 75 56 <br>
+                <p>01 00 00 00 00 <br>
                     BDE@CFA-INSTA.FR<br>
                     12 RUE CLERY 75002</p>
             </div>
