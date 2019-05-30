@@ -25,25 +25,22 @@
          $verif =$api->verification("membre",$dt, $args["user"],$args["password"]);
          if($verif)
          {
-             $arguments = explode(",",$args["data"]);
 
-             switch ($arguments[0])
+             if(isset($args["getData"]))
              {
-            
-                 case "getData":
-                    $api->getAllData($arguments[1]);
-                 break;
+                $api->getAllData($args["getData"]);
 
-                 case "deleteData":
-                  $api->deleteData($arguments[1],$arguments[2]);
-                 break;
+             }elseif(isset($args["deleteData"]))
+             {
+                $arguments = explode(",",$args["deleteData"]);
+                $api->deleteData($arguments[0],$arguments[1]);
 
-
-                 case "insertData":
-                 //InsertData requiere un autre argument qui est rows
+             }elseif(isset($args["insertData"])){
+                if(isset($args["rows"]))
+                {
                     $rows= explode(",",$args["rows"]);
-                    $api->insertData($arguments[1],$rows);
-                 break;
+                    $api->insertData($args["insertData"],$rows);
+                 }
              }
 
          }else{
