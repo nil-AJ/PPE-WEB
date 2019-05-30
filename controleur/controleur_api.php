@@ -18,36 +18,51 @@
  {
 
     $api = $GLOBALS["api"];
-    if( isset($args["user"]) && isset($args["user"]))
+    if( isset($args["user"]) && isset($args["password"]))
     {
-        //On verifie que l'utilisateur est bein enregistré
-        $dt = array("email",'password',2,"EEEEE");
-         $verif =$api->verification("membre",$dt, $args["user"],$args["password"]);
-         if($verif)
-         {
+        $verif =$api->verification("membre", array("email",'password'), $args["user"],$args["password"]);
 
-             if(isset($args["getData"]))
-             {
-                $api->getAllData($args["getData"]);
+         //Si l'argument user_exist n'est pas present on continue
+        if(!isset($args["user_exist"]))
+        {
+            //On verifie que l'utilisateur est bein enregistré
+            if($verif)
+            {
 
-             }elseif(isset($args["deleteData"]))
-             {
-                $arguments = explode(",",$args["deleteData"]);
-                $api->deleteData($arguments[0],$arguments[1]);
-
-             }elseif(isset($args["insertData"])){
-                if(isset($args["rows"]))
+                if(isset($args["getData"]))
                 {
-                    $rows= explode(",",$args["rows"]);
-                    $api->insertData($args["insertData"],$rows);
-                 }
-             }
+                    $api->getAllData($args["getData"]);
+
+                }elseif(isset($args["deleteData"]))
+                {
+                    $argument = explode(",",$args["deleteData"]);
+                    $api->deleteData($argument[0],$argument[1],$argument[2]);
+
+                }elseif(isset($args["insertData"])){
+                    
+                        $arguments= explode(",",$args["insertData"]);
+                        $rows = array_slice($arguments,1);
+                        $api->insertData($arguments[0],$rows);
+                    
+                }
+            }
 
          }else{
-
-             //L'utilisateur recois un reponse négative
-             $api->response([["Response"=>"403",
-                 "Access"=>"Restricted"]]);
+            //Si l'argument user_exist est present et que le mp et l'email match on renvoie une reponse positive
+             if($verif)
+             {
+                 $api->response([
+                     "Response"=>200,
+                     "User"=>true
+                 ]
+                 );
+             }else{
+                $api->response([
+                    "Response"=>403,
+                    "User"=>false
+                ]
+                );
+             }
 
               
          }

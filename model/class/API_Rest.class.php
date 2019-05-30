@@ -41,11 +41,12 @@ class ApiRest extends ConnexionBDD
         }
     }
 
-    public function deleteData($table=null, $column=null)
+    public function deleteData($tb=null, $column=null,$id)
     {
-        if(!empty($table) && !empty($column))
+        if(!empty($tb))
         {
-            parent::createBDD()->query(" DELETE FROM ".$table." WHERE ".$column."=".$id);
+            parent::createBDD()->query("DELETE FROM ".$tb." WHERE ".$column."=".$id);
+
             $this->response([["Response"=>"200"]]);
         }
     }
@@ -102,13 +103,16 @@ class ApiRest extends ConnexionBDD
     {
         foreach($tabs as &$tab)
         {
-            foreach($tab as $key => $element)
+            if(is_array($tab))
             {
-                if(is_numeric($key))
+                foreach($tab as $key => $element)
                 {
-                    unset($tab[$key]);
+                    if(is_numeric($key))
+                    {
+                        unset($tab[$key]);
+                    }
                 }
-            }
+        }
             unset($tab);
         }
 
