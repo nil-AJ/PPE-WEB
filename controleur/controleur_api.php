@@ -1,15 +1,16 @@
 <?php
 
 /**Une requete pour l'api ce constitue de cette facon
- * url?call_api=true&user=****&password=*******&data=
+ * url?call_api=true&user=****&password=*******&CEquonveutdata=
  * les arguments de data doivent être passé sous forme de tableau avec en premier parametre la commande souhaité
  * getData
  * deleteData
  * insertData
+ * updateData \\Peut etre accompagné du parametre clause=//
  *  les parametre du tableau qui les suivent demandent tous des paramètres differents et sont spceifiés dans la class API_Rest
- * Exemple : url?call_api=true&user=****&password=*******&data=getData,membre <- pas besoin de crochet juste de virgule le tableau est crée par php
- * url/?call_api=true&user=**********&password=*********************&data=insertData,category&rows="",Test,JB,
- * Attention  a bien envoyé le mot de passse encrypté en sha1 dans la requete pour qu'il ne soit pas compris
+ * Exemple : url?call_api=true&user=****&password=*******&getData=membre 
+ * url/?call_api=true&user=**********&password=*********************&insertData=category,,Test,JB, - pas besoin de crochet juste de virgule le tableau est crée par le controleur
+ * Attention  a bien envoyé le mot de passse encrypté en sha1 dans la requete pour qu'il ne soit pas visible par un potentiel attaquant
  * 
  */
 
@@ -43,7 +44,21 @@
                         $arguments= explode(",",$args["insertData"]);
                         $rows = array_slice($arguments,1);
                         $api->insertData($arguments[0],$rows);
-                    
+                }elseif(isset($args["updateData"]))
+                {
+                    $cond=[];
+                    $val= explode(",",$args["updateData"]);
+                    if(isset($args["clause"]))
+                    {
+                        $cond = explode(",",$args["clause"]);
+                        $api->updateData($val[0],$val[1],$val[2],$cond);
+                    }else{
+                        $api->response([
+                            "Success"=>503,
+                            "Details"=>"Argument manquant"
+                        ]);
+                    }
+                
                 }
             }
 
@@ -51,11 +66,7 @@
             //Si l'argument user_exist est present et que le mp et l'email match on renvoie une reponse positive
              if($verif)
              {
-                 $api->response([
-                     "Response"=>200,
-                     "User"=>true
-                 ]
-                 );
+                
              }else{
                 $api->response([
                     "Response"=>403,
