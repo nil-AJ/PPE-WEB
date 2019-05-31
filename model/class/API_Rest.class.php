@@ -41,12 +41,39 @@ class ApiRest extends ConnexionBDD
         }
     }
 
-    public function deleteData($table=null, $column=null)
+    public function deleteData($tb=null, $column=null,$id)
     {
-        if(!empty($table) && !empty($column))
+        if(!empty($tb))
         {
-            parent::createBDD()->query(" DELETE FROM ".$table." WHERE ".$column."=".$id);
+            parent::createBDD()->query("DELETE FROM ".$tb." WHERE ".$column."='".$id."'");
+
             $this->response([["Response"=>"200"]]);
+        }
+    }
+
+    //Condition prend forcement et strictement deux parametre la colonne de table sql et le parametre de la condition (ex [id,2])
+    public function updateData($t=null, $col=null,$value,$condition=[])
+    {
+        $sql="";
+        if(!empty($t))
+        {
+            //Si aucune condition n'est donnée
+            if(!empty($condition))
+            {
+                if(count($condition)==2)
+                {
+                    $sql="UPDATE ".$t." SET ".$col." = '".$value."' WHERE ".$condition[0]." = '".$condition[1]."'";
+                    $this->response([
+                        "Success"=>200,
+                    ]);
+                }else{
+                    $this->response([
+                        "Success"=>503,
+                        "Details"=>"Argument manquant"
+                    ]);
+                }
+            }
+            parent::createBDD()->query($sql);
         }
     }
 
@@ -68,6 +95,20 @@ class ApiRest extends ConnexionBDD
         }
     }
 
+    public function getInfo($tb=null,$user=null,$password)
+    {
+        if(!empty($tb) && !empty($user)){
+
+            $req =parent::createBDD()->prepare("SELECT * FROM ".$table." WHERE ".$rows["user"]."= ? AND ".$rows["password"]."= ?");
+            $req->execute(array(
+                $user,
+                $password
+            ));
+            $rep = $req->fetchAll();
+            $req->closeCursor();
+        }
+    }
+
     public function verification($table=null,$r=["user"=>"","password"=>""], $user,$password)
     {
         if(!empty($table) && $row[0]=!"")
@@ -79,11 +120,14 @@ class ApiRest extends ConnexionBDD
              $user,
              $password
          ));
-         $rep = $req->fetch();
+         $rep = $req->fetchAll();
          $req->closeCursor();
 
          if($rep)
          {
+             $rep["Response"]=200;
+             $rep["User"]= true;
+             $this->response($rep);
              return true;
          }else{
              return false;
@@ -102,11 +146,14 @@ class ApiRest extends ConnexionBDD
     {
         foreach($tabs as &$tab)
         {
-            foreach($tab as $key => $element)
+            if(is_array($tab))
             {
-                if(is_numeric($key))
+                foreach($tab as $key => $element)
                 {
-                    unset($tab[$key]);
+                    if(is_numeric($key))
+                    {
+                        unset($tab[$key]);
+                    }
                 }
             }
             unset($tab);
