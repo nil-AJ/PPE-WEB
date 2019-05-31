@@ -19,9 +19,7 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#"><i class="far ico-adm  fa-calendar-alt"></i> Calandrier</a>
-            </li>
+
             <li>
                 <a href="#"><i class="fas fa-gavel"></i> Réglement</a>
             </li>
@@ -33,6 +31,9 @@
                     </li>
                     <li>
                         <a href="?section=administration_ajou_news">News Ajou</a>
+                    </li>
+                    <li>
+                        <a href="">Partenaria Ajou</a>
                     </li>
                     <li>
                         <a href="#">Media Ajou</a>
@@ -49,28 +50,14 @@
                         <a href="#">News Sup</a>
                     </li>
                     <li>
+                        <a href="#">partenaria Sup</a>
+                    </li>
+                    <li>
                         <a href="#">Media Sup</a>
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="#pageT" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-file-excel"></i> Tuto</a>
-                <ul class="collapse list-unstyled" id="pageT">
-                    <li>
-                        <a href="#">Discord</a>
-                    </li>
-                    <li>
-                        <a href="#">Trello</a>
-                    </li>
-                    <li>
-                        <a href="#">Mailchimp</a>
-                    </li>
-                </ul>
-            </li>
-
         </ul>
-
-
     </nav>
 </div>
 
