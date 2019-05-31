@@ -5,7 +5,7 @@
             <h5>Contact —</h5>
             <div class="col-12">
                 <p>01 00 00 00 00 <br>
-                    BDE@CFA-INSTA.FR<br>
+                    WayZone@CFA-INSTA.FR<br>
                     12 RUE CLERY 75002</p>
             </div>
         </div>
@@ -14,9 +14,8 @@
             <div class="col-12">
                 <ul class="pages">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">A / Membre</a></li>
-                    <li><a href="#">A / Partenaria</a></li>
-                    <li><a href="#">Calendrier</a></li>
+                    <li><a href="#">Membre</a></li>
+                    <li><a href="#">Partenaria</a></li>
                 </ul>
             </div>
         </div>
@@ -34,13 +33,13 @@
                     }
                     if (!$connect) {
                         echo ' <li>
-                    <a  href="?section=connexion">connexion BDE</a>
+                    <a  href="?section=connexion">connexion</a>
                 </li>';
 
                     }
                     if ($connect) {
                         echo ' <li>
-                    <a  href="?section=administration_index">membre BDE</a>
+                    <a  href="?section=administration_index">espace membre</a>
                 </li>   ';
                     } ?>
                 </ul>
@@ -53,7 +52,6 @@
         <p> ©2018 BDE CFA INSTA . All Rights Reserved </p>
     </div>
 </footer>
-
 
 <style>
     /*****************
@@ -118,28 +116,18 @@
 .footer-left{
     margin-right: 8%;
 }
-
-
-
-
     @media (max-width: 1052px) {
     .mobil-none{
         display: none;
     }
-
     }
 
     /*****************
     END footer.php
     ****************/
 </style>
-
-
 <!-- JavaScript -->
 <script src="public/Javascript/display-none.js"></script>
-<script src="public/Javascript/navbar.js"></script>
-<script src="public/Javascript/number.js"></script>
-<script src="public/javascript/calandar-form.js"></script>
 <!-- font-Awesome -->
 <!-- jQuery Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
