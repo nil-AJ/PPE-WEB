@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h3 class="titre_new">Les dernieres news du BDE</h3>
+    <h3 class="titre_new">Les dernieres news</h3>
     <nav class="nav-filtre">
         <div class="marg-new">
             <div class="container">

@@ -56,7 +56,9 @@ include('global.php');
                     creation_news();
                     break;
 
-
+                case 'home':
+                    home();
+                    break;
 
                 default:
                     throw new Exception(404);
