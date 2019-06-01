@@ -1,7 +1,5 @@
 
 
-
-
 <div class="bd-example">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -12,6 +10,18 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="public\image\34226189.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>WayZone</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="public/image/informatique.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>WayZone</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="public/image/photo_informatique_2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>WayZone</h1>
                 </div>

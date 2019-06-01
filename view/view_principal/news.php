@@ -32,9 +32,6 @@
     }
 
 
-
-
-
     .marg-new {
         padding-bottom: 3%;
     }
@@ -54,7 +51,6 @@
         margin-bottom: 1%;
         font-weight: 600;
     }
-
 
     .inserticon-fontico-new {
         color: black;
@@ -86,17 +82,12 @@
         box-shadow: none;
     }
 
-
     @media (max-width: 1052px){
         .titre_new {
             margin-top: 30%;
             margin-bottom: 10%;
         }
     }
-
-
-
-
 
     /*****
      Code for nav filtre

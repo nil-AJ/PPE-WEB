@@ -1,7 +1,5 @@
 <?php
 
-
-
 function uploadMember()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -71,6 +69,7 @@ function uploadMember()
         }
     }
 
+
 //administration déclaration index
 function administration_index()
 {
@@ -102,7 +101,7 @@ function creation_news()
             {
                 include 'model/model_add_news';
             }
-             $GLOBALS['u']->add("view\view_administration\form_ajou\creation_news.php",1);
+             $GLOBALS['u']->add("view/view_administration/form_ajou\creation_news.php",1);
         }
     }else{
 
@@ -171,6 +170,18 @@ function administration_sup_media()
     {
 
         $GLOBALS['u']->add("view/view_administration/form_sup/sup_media.php",1);
+    }else{
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
+//supretion partenaria
+function administration_sup_partenaria()
+{
+    if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
+    {
+
+        $GLOBALS['u']->add("view/view_administration/form_sup/sup_partenaria.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
