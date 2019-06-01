@@ -14,7 +14,7 @@ function uploadMember()
                 include 'model/upload/model_media_upload.php' ;
             }
 
-            $GLOBALS['u']->add("view\view_administration\form_ajou\upload.php",1);
+            $GLOBALS['u']->add("view/view_administration/form_ajou\upload.php",1);
         }
         }else{
 
@@ -62,7 +62,7 @@ function uploadMember()
             include 'model/model_inscription.php';
         }
 
-        $GLOBALS['u']->add("view\view_administration\form_ajou\insciption.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_ajou\insciption.php",1);
         }else{
 
             throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
