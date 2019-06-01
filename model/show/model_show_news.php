@@ -9,7 +9,6 @@ function show_filt_news()
     foreach ($req->fetchAll() as $news) {
         ?>
 
-
         <form action="">
             <div class="row">
                 <div class=" inputnew col">
@@ -43,7 +42,6 @@ function show_filt_news()
             <button style="margin-top:50px " class="btn btn-dark" type="submit">Filtré</button>
         </form>
 
-
         <?php
     }
     $repo = ob_end_flush();
@@ -69,7 +67,6 @@ function show_news()
                     </div>
                     <img src="public/image/logo/BDE_CFA_INSTA/logo_BDE_CFA_INSTA-noir.png"
                          style="max-height: 250px; max-width: 250px" class="card-img">
-
                 </div>
                 <div class="col-md-8 col-sm-3 col-lg-8">
                     <div class="card-body">

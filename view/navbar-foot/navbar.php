@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="public/image/wayzone-logo-blanc.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Wayzone
         </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
