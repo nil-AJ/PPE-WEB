@@ -18,11 +18,6 @@
                     </li>
                 </ul>
             </li>
-
-
-            <li>
-                <a href="#"><i class="fas fa-gavel"></i> Réglement</a>
-            </li>
             <li>
                 <a href="#pageA" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-file-alt"></i> Formulaire Ajou</a>
                 <ul class="collapse list-unstyled" id="pageA">
@@ -30,7 +25,7 @@
                         <a href="#">Inscription Ajou</a>
                     </li>
                     <li>
-                        <a href="?section=administration_ajou_news">News Ajou</a>
+                        <a href="?section=creation_news">News Ajou</a>
                     </li>
                     <li>
                         <a href="">Partenaria Ajou</a>
