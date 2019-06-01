@@ -22,7 +22,7 @@
                 <a href="#pageA" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-file-alt"></i> Formulaire Ajou</a>
                 <ul class="collapse list-unstyled" id="pageA">
                     <li>
-                        <a href="#">Inscription Ajou</a>
+                        <a href="?section=inscription">Inscription Ajou</a>
                     </li>
                     <li>
                         <a href="?section=creation_news">News Ajou</a>
