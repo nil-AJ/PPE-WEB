@@ -54,7 +54,7 @@ function uploadMember()
         
     }
     
-    
+    //ajoue membre
     function inscription()
     {
         if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -64,14 +64,14 @@ function uploadMember()
             include 'model/model_inscription.php';
         }
 
-        $GLOBALS['u']->add("view\view_administration\form_ajou\creation_news.phpinscription.php",1);
+        $GLOBALS['u']->add("view\view_administration\form_ajou\insciption.php",1);
         }else{
 
             throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
         }
     }
 
-
+//administration déclaration index
 function administration_index()
 {
     if(isset($_SESSION['user_info'])) 
@@ -88,7 +88,7 @@ function administration_index()
 }
 
 
-
+//supretion ajoue news
 function creation_news()
 {
     if(isset($_SESSION['user_info'])) 
@@ -112,13 +112,13 @@ function creation_news()
 
 
 
-//
+//supretion supretion membre
 function administration_sup_membre()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
 
-        $GLOBALS['u']->add("view/view_administration/sup_membre.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_sup/sup_membre.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
@@ -126,51 +126,51 @@ function administration_sup_membre()
 }
 
 
-//
+//supretion ajoue categorie
 function administration_ajoue_categorie()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
 
-        $GLOBALS['u']->add("view/view_administration/creation_categorie.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_ajoue/creation_categorie.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
 
-//
+//supretion ajoue partenaria
 function administration_ajoue_partenaria()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
 
-        $GLOBALS['u']->add("view/view_administration/creation_partenaria.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_ajoue/creation_partenaria.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
 
-//
+//supretion news
 function administration_sup_news()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
 
-        $GLOBALS['u']->add("view/view_administration/sup_news.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_sup//sup_news.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
-//
+//supretion média
 function administration_sup_media()
 {
     if(isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
 
-        $GLOBALS['u']->add("view/view_administration/sup_media.php",1);
+        $GLOBALS['u']->add("view/view_administration/form_sup/sup_media.php",1);
     }else{
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
