@@ -47,7 +47,7 @@ class ApiRest extends ConnexionBDD
         {
             parent::createBDD()->query("DELETE FROM ".$tb." WHERE ".$column."='".$id."'");
 
-            $this->response([["Response"=>"200"]]);
+            $this->response([["Response"=>20]]);
         }
     }
 
@@ -64,7 +64,7 @@ class ApiRest extends ConnexionBDD
                 {
                     $sql="UPDATE ".$t." SET ".$col." = '".$value."' WHERE ".$condition[0]." = '".$condition[1]."'";
                     $this->response([
-                        "Success"=>200,
+                        "Success"=>20,
                     ]);
                 }else{
                     $this->response([
@@ -81,33 +81,20 @@ class ApiRest extends ConnexionBDD
     {
         if(!empty($table) && !empty($column))
         {
-            $rep = parent::insertRow($table,$column);
-            if($rep != 2 || $rep !=false)
+            $re = parent::insertRow($table,$column);
+            if($re != 2 || $re !=false)
             {
-                $this->response([["Response"=>"200",
-                "Success"=>$rep]]);
+                $this->response([["Response"=>20,
+                "Success"=>$re]]);
             }else{
                 $this->response([["Response"=>"500",
                 "Details"=>"Creation impossible",
-                "Erreur"=>$rep,
+                "Erreur"=>$re,
                 "Success"=>false]]);
             }
         }
     }
 
-    public function getInfo($tb=null,$user=null,$password)
-    {
-        if(!empty($tb) && !empty($user)){
-
-            $req =parent::createBDD()->prepare("SELECT * FROM ".$table." WHERE ".$rows["user"]."= ? AND ".$rows["password"]."= ?");
-            $req->execute(array(
-                $user,
-                $password
-            ));
-            $rep = $req->fetchAll();
-            $req->closeCursor();
-        }
-    }
 
     public function verification($table=null,$r=["user"=>"","password"=>""], $user,$password)
     {
@@ -125,12 +112,13 @@ class ApiRest extends ConnexionBDD
 
          if($rep)
          {
-             $rep["Response"]=200;
+             $rep["Response"]=20;
              $rep["User"]= true;
-             $this->response($rep);
-             return true;
+             return $rep;
          }else{
-             return false;
+            $rep["Response"]=503;
+            $rep["User"]= false;
+             return $rep;
          }
         }
     }
