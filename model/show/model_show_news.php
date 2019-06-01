@@ -59,13 +59,13 @@ function show_news()
     ob_start();
     foreach ($req->fetchAll() as $news) {
         ?>
-        <div class="card mb-3 shadow">
+        <div class="card mb-3 col-12 shadow">
             <div class="row no-gutters">
                 <div class="col-md-3 col-sm-3 col-lg-3">
                     <div class='time'>
                         <div class='date'><strong><?= date('j M ', strtotime($news['dateStart'])) ?></strong></div>
                     </div>
-                    <img src="public/image/logo/BDE_CFA_INSTA/logo_BDE_CFA_INSTA-noir.png"
+                    <img src="public/image/wayzone-logo-blanc.png"
                          style="max-height: 250px; max-width: 250px" class="card-img">
                 </div>
                 <div class="col-md-8 col-sm-3 col-lg-8">
@@ -76,7 +76,8 @@ function show_news()
                             <span style="background-color: #607d8b"
                                   class="badge badge-secondary"><?= $news['categoryName'] ?></span>
                         </div>
-                        <p class="card-text"><?= $news['content'] ?></p>
+                        <br>
+                        <a href="<?= $news['content'] ?>" class="card-text">Lien de l'article</a>
                     </div>
                 </div>
             </div>
