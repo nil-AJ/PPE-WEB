@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: nilju
- * Date: 01/06/2019
- * Time: 20:09
- */
+<?php include 'view/navbar-foot/navadm.php';?>
