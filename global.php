@@ -3,7 +3,7 @@
      include 'model/class/ConnexionBDD.class.php';
      include 'model/class/API_Rest.class.php';
 
-     const BDD_NAME= "PPE";
+     const BDD_NAME= "PPE_WAYZONE";
 
      //Used
      $use = new Used(['view/navbar-foot/navbar.php','view/navbar-foot/foot.php']);

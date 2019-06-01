@@ -22,14 +22,13 @@
     if( isset($args["user"]) && isset($args["password"]))
     {
         $verif =$api->verification("membre", array("email",'password'), $args["user"],$args["password"]);
-
          //Si l'argument user_exist n'est pas present on continue
         if(!isset($args["user_exist"]))
         {
+            
             //On verifie que l'utilisateur est bein enregistré
-            if($verif)
+            if($verif["User"])
             {
-
                 if(isset($args["getData"]))
                 {
                     $api->getAllData($args["getData"]);
@@ -40,7 +39,7 @@
                     $api->deleteData($argument[0],$argument[1],$argument[2]);
 
                 }elseif(isset($args["insertData"])){
-                    
+
                         $arguments= explode(",",$args["insertData"]);
                         $rows = array_slice($arguments,1);
                         $api->insertData($arguments[0],$rows);
@@ -60,20 +59,35 @@
                     }
                 
                 }
+            }else{
+                $api->response([
+                    "Response"=>403,
+                    "User"=>false,
+                    "Access"=>"Forbiden"
+                ]
+                );
             }
 
          }else{
             //Si l'argument user_exist est present et que le mp et l'email match on renvoie une reponse positive
-             if($verif)
-             {
-                
-             }else{
-                $api->response([
-                    "Response"=>403,
-                    "User"=>false
-                ]
-                );
-             }
+            if(isset($args["user_exist"]))
+            {
+               
+                if($args["user_exist"])
+                {
+                    if($verif["User"])
+                    {
+                        $api->response($verif);
+                        
+                    }else{
+                        $api->response([
+                            "Response"=>403,
+                            "User"=>false
+                        ]
+                        );
+                    }
+                }
+        }
 
               
          }
