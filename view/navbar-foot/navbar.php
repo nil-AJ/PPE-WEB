@@ -50,7 +50,7 @@
                 <a class="nav-link" href="?section=partenariat">Partenariat</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="?section=contact">Contact</a>
+                <a class="nav-link" href="?section=message">Contact</a>
             </li>
         </ul>
             <?php

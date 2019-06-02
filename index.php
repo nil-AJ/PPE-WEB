@@ -37,6 +37,9 @@ include('global.php');
                 case 'partenariat':
                     partenariat();
                     break;
+                case 'message':
+                    message();
+                    break;
 
 
                 ////view administration
