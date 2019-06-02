@@ -20,7 +20,7 @@ function uploadMember()
     }
 }
 
-//déco du membre
+//co déco du membre
 function DEconnexion($mode)
 {
     if ($mode)//Connexion

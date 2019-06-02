@@ -33,7 +33,6 @@
         <img src="public/image/wayzone-logo-blanc.png" width="50" height="30" class="d-inline-block align-top" alt="">
         Wayzone
     </a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="?section=home">Home </a>
@@ -53,20 +52,24 @@
             <li class="nav-item active">
                 <a class="nav-link" href="?section=contact">Contact</a>
             </li>
+        </ul>
             <?php
             $connect = false;
+
             if (isset($_SESSION['user_info'])) {
-                if ($_SESSION['user_info']['verification'][0] == true) {
-                    $connect = true;
-                }
+                $connect = true;
+
             }
             if (!$connect) {
                 echo ' ';
 
             }
             if ($connect) {
-                echo '  
-             <li class="nav-item dropdown">
+                echo '
+<div class="justify-content-end">
+
+<ul class="navbar-nav mr-auto mt-3 mt-lg-0">
+             <li class=" nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="ajout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Formulaire ajout </a>                              
                  <div class="dropdown-menu" aria-labelledby="ajout">
@@ -88,22 +91,21 @@
                     <a class="dropdown-item" href="#">Media supp</a>
                 </div>
              </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="?section=partenariat">Message</a>
             </li>
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               ' . $_SESSION['user_info']['prename'] . $_SESSION['user_info']['name'] . '
+               ' . $_SESSION['user_info']['prename'] . ' ' . $_SESSION['user_info']['name'] . '
                 </a>
                  <div class="dropdown-menu" aria-labelledby="user">
-                    <a class="dropdown-item" href="#">Deconnexion</a>
+                    <a class="dropdown-item" href="?section=deconnexion">Deconnexion</a>
                     <a class="dropdown-item" href="#">Profil</a>
                 </div>
-             </li>  ';
+             </li>  
+             </ul>
+             <div>
+         ';
             } ?>
-        </ul>
-    </div>
+
 </nav>
-
-
-

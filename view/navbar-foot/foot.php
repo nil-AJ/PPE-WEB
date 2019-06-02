@@ -28,9 +28,8 @@
                     <?php
                     $connect = false;
                     if (isset($_SESSION['user_info'])) {
-                        if ($_SESSION['user_info']['verification'][0] == true) {
-                            $connect = true;
-                        }
+                        $connect = true;
+
                     }
                     if (!$connect) {
                         echo ' <li>
@@ -50,7 +49,7 @@
 
 <footer class="container-fluid footer-nav-end">
     <div class="row foot-end justify-content-center">
-        <p> ©2018 BDE CFA INSTA . All Rights Reserved </p>
+        <p> ©2018 WayZone . All Rights Reserved </p>
     </div>
 </footer>
 
