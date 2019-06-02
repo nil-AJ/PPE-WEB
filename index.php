@@ -90,7 +90,7 @@ include('global.php');
             }
 
         ////view error
-        
+
     }catch(Exception $e)
     {
         switch ($e->getMessage()) {

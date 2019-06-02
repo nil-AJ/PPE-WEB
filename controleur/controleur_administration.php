@@ -80,10 +80,10 @@ function administration_message()
 /// ////////////////
 /// //////////////////////////
 /// ////////////////////
-/// Page d'ajoue
+/// Page d'ajout
 
 
-//ajoue membre 1
+//ajout membre 1
 function inscription()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -99,7 +99,7 @@ function inscription()
     }
 }
 
-//ajoue news 2
+//ajout news 2
 function creation_news()
 {
     if (isset($_SESSION['user_info'])) {
@@ -118,7 +118,7 @@ function creation_news()
     }
 }
 
-//supretion ajoue categorie 3
+//ajout categorie 3
 function administration_ajoue_categorie()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -131,7 +131,7 @@ function administration_ajoue_categorie()
     }
 }
 
-//supretion ajoue partenaria 4
+// ajout partenaria 4
 function administration_ajoue_partenaria()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -151,7 +151,7 @@ function administration_ajoue_partenaria()
 /// Page de supretion
 
 
-//supretion supretion membre 1
+// supretion membre 1
 function administration_sup_membre()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
