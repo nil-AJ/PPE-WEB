@@ -4,8 +4,34 @@
         <div class="marg-new">
             <div class="container">
                 <div class="row in-new">
+                    <form action="">
+                        <div class="row">
+                            <div class=" inputnew col">
+                                <label class="inserticon-fontico-new">
+                                    <i class="fas fa-search"></i>
+                                </label>
+                                <input type="text" placeholder="Title..." name=""/>
+                            </div>
+                            <div class=" inputnew col">
+                                <label class="inserticon-fontico-new">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </label>
+                                <input type="date" class="date" placeholder="Date max"/>
+                            </div>
+                            <div class=" inputnew col">
+                                <label class="inserticon-fontico-new">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </label>
+                                <input type="date" class="date" placeholder="Date min"/>
+                            </div>
+                        </div>
+                        <div style="padding-top: 30px" class="row">
+                            <?=  show_filt_news() ?>
 
-                    <?=  show_filt_news() ?>
+                        </div>
+                        <button style="margin-top:50px " class="btn btn-dark" type="submit">Filtré</button>
+                    </form>
+
 
                 </div>
             </div>
@@ -16,7 +42,7 @@
 
 <div class="container">
     <div class="row">
-        
+
         <?= show_news() ?>
 
 

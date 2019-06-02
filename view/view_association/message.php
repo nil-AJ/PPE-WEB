@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <textarea class="form-control" type="textarea"  name="content" placeholder="Message" maxlength="160" rows="7"></textarea>
                     </div>
-                    <button type="button"  name="envoyer_message" class="btn btn-primary pull-right">Envoyer le message</button>
+                    <button type="submit"  name="" class="btn btn-primary pull-right">Envoyer le message</button>
                 </form>
             </div>
         </div>

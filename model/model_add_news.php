@@ -6,6 +6,7 @@
  if(isset($_POST['category_news']))
  {
 
+     //On verifie si category existe
      $req = $bdd->createBDD()->prepare('SELECT idCategory, categoryName FROM category WHERE categoryName = ?');
      $req->execute(array(
          $_POST['category_news']
@@ -25,7 +26,7 @@
        ));
        $req->closeCursor(); 
 
-
+        //On recupere l'id de la categorie
        $req = $bdd->createBDD()->prepare('SELECT idCategory, categoryName FROM category WHERE categoryName = ?');
        $req->execute(array(
            $_POST['category_news']
@@ -39,8 +40,8 @@
  }
 
 //Insertion de la news
-if(isset($_POST['image_name']))
-$req = $bdd->createBDD()->prepare('INSERT INTO media(title,content,category,dateStart) VALUES(?,?,?,Now())');
+
+$req = $bdd->createBDD()->prepare('INSERT INTO news(title,content,category,dateStart) VALUES(?,?,?,Now())');
 $req->execute(array(
    $_POST['title_news'],
    $_POST['content_news'],

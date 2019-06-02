@@ -1,74 +1,24 @@
 <?php
 
 
-public function rechercher($tab, $mot_cle)
-{
-    $champs = array();
-    foreach ($tab as $value) {
-        $champs[] = $value . " like :mot_cle";
-    }
-    $chaine = implode(" or ", $champs);
-
-
-    $query = "SELECT * FROM " . $this->table . " WHERE " . $chaine . ";";
-    $data = array(":mot_cle" => "%" . $mot_cle . "%");
-    if ($this->pdo != null) {
-        $recherche = $this->pdo->prepare($query);
-        $recherche->execute($data);
-        $result = $recherche->fetchAll();
-        return $result;
-    } else {
-        return null;
-    }
-}
 
 function show_filt_news()
 {
 
 
-
-
-
-
-
     $bdd = $GLOBALS['bdd'];
-    $req = $bdd->createBDD()->query('SELECT * FROM aff_new_cat');
+    $req = $bdd->createBDD()->query('SELECT * FROM category');
     ob_start();
-    foreach ($req->fetchAll() as $news) {
+    foreach ($req->fetchAll() as $cate) {
         ?>
 
-        <form action="">
-            <div class="row">
-                <div class=" inputnew col">
-                    <label class="inserticon-fontico-new">
-                        <i class="fas fa-search"></i>
-                    </label>
-                    <input type="text" placeholder="Title..." name=""/>
-                </div>
-                <div class=" inputnew col">
-                    <label class="inserticon-fontico-new">
-                        <i class="fas fa-calendar-alt"></i>
-                    </label>
-                    <input type="date" class="date" placeholder="Date max"/>
-                </div>
-                <div class=" inputnew col">
-                    <label class="inserticon-fontico-new">
-                        <i class="fas fa-calendar-alt"></i>
-                    </label>
-                    <input type="date" class="date" placeholder="Date min"/>
-                </div>
+        <div class="col-auto my-1">
+            <div class="custom-control custom-checkbox mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="<?= $cate ['categoryName'] ?>">
+                <label class="custom-control-label"
+                       for="<?= $cate ['categoryName'] ?>"><?= $cate ['categoryName'] ?></label>
             </div>
-            <div style="padding-top: 30px" class="row">
-                <div class="col-auto my-1">
-                    <div class="custom-control custom-checkbox mr-sm-2">
-                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                        <label class="custom-control-label"
-                               for="customControlAutosizing"><?= $news['categoryName'] ?></label>
-                    </div>
-                </div>
-            </div>
-            <button style="margin-top:50px " class="btn btn-dark" type="submit">Filtré</button>
-        </form>
+        </div>
 
         <?php
     }
@@ -105,7 +55,7 @@ function show_news()
                                   class="badge badge-secondary"><?= $news['categoryName'] ?></span>
                         </div>
                         <br>
-                        <a href="<?= $news['content'] ?>" class="card-text">Lien de l'article</a>
+                        <a href="<?= $news['content'] ?>" class="card-text"><?= $news['content'] ?></a>
                     </div>
                 </div>
             </div>

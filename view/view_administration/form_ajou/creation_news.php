@@ -1,16 +1,5 @@
-<?php include 'view/navbar-foot/navadm.php';?>
 
-<br />
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-<form action="" method="POST">
+<form style="margin-top: 30%; margin-bottom: 30%" action="" method="POST">
     <label for="title">Titre:</label>
     <input type="text" placeholder="titre" name="title_news">
 
@@ -22,5 +11,5 @@
     <datalist id="category">
         <?= dataList(false) ?>
     </datalist>
-
+    <button type="submit"  name="" class="btn btn-primary pull-right">Envoyer</button>
 </form>

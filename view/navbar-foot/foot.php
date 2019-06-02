@@ -28,8 +28,11 @@
                     <?php
                     $connect = false;
                     if (isset($_SESSION['user_info'])) {
-                        $connect = true;
 
+
+                        if ($_SESSION['user_info']['verification']) {
+                            $connect = true;
+                        }
                     }
                     if (!$connect) {
                         echo ' <li>

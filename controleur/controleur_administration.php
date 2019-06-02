@@ -88,11 +88,15 @@ function inscription()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
-        if (isset($_POST['name']) && isset($_POST['prename']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['status']) && isset($_POST['class'])) {
+        if (!empty($_POST['name']) && !empty($_POST['prename']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['status'])) {
+
             include 'model/model_inscription.php';
+
         }
 
         $GLOBALS['u']->add("view/view_administration/form_ajou/inscription.php", 1);
+
+
     } else {
 
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
@@ -105,10 +109,10 @@ function creation_news()
     if (isset($_SESSION['user_info'])) {
         if ($_SESSION['user_info']['verification']) {
 
-            include 'model_datalist_upload.php';
+            include 'model/upload/model_datalist_upload.php';
 
             if (isset($_POST['title_news']) && isset($_POST['content_news']) && isset($_POST['category_news'])) {
-                include 'model/model_add_news';
+                include 'model/model_add_news.php';
             }
             $GLOBALS['u']->add("view/view_administration/form_ajou/creation_news.php", 1);
         }
@@ -118,18 +122,6 @@ function creation_news()
     }
 }
 
-//ajout categorie 3
-function administration_ajoue_categorie()
-{
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
-
-        $GLOBALS['u']->add("view/view_administration/form_ajou/creation_categorie.php", 1);
-    } else {
-
-        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
-    }
-}
 
 // ajout partenaria 4
 function administration_ajoue_partenaria()
@@ -154,8 +146,9 @@ function administration_ajoue_partenaria()
 // supretion membre 1
 function administration_sup_membre()
 {
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
+
+    if (!empty($_POST['name']) && !empty($_POST['prename']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['status'])) {
+
 
         $GLOBALS['u']->add("view/view_administration/form_sup/sup_membre.php", 1);
     } else {

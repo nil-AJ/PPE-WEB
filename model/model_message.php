@@ -5,10 +5,10 @@ $bdd = $GLOBALS['bdd'];
 
 $req = $bdd->createBDD()->prepare('SELECT * FROM message ');
 
-if(isset($_POST['envoyer_message']))
-{
-    $req = $bdd->createBDD()->prepare('INSERT INTO message (name, prename, email,	phoneNumber, type,	content) VALUES(?,?,?,?,?,?,Now())');
+
+    $req = $bdd->createBDD()->prepare('INSERT INTO message ( name, prename, email, phoneNumber, type,	content) VALUES(?,?,?,?,?,?)');
     $req->execute(array(
+
         $_POST['name'],
         $_POST['prename'],
         $_POST['email'],
@@ -16,9 +16,12 @@ if(isset($_POST['envoyer_message']))
         $_POST['type'],
         $_POST['content']
     ));
-    $req->closeCursor();
 
-    $_POST =array();//On vide le POST
-}else{
-   echo 'err le message a pas était envoyer';
-}
+    $req->closeCursor();
+    $_POST = array();//On vide le POST
+
+
+
+
+?>
+

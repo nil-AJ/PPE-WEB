@@ -17,14 +17,11 @@
     <link href="public/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- calandar form -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,15 +54,17 @@
             $connect = false;
 
             if (isset($_SESSION['user_info'])) {
-                $connect = true;
 
+                if ($_SESSION['user_info']['verification']) {
+                    $connect = true;
+                }
             }
             if (!$connect) {
                 echo ' ';
 
             }
             if ($connect) {
-                echo '
+                ?>
 <div class="justify-content-end">
 
 <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
@@ -73,10 +72,9 @@
                 <a class="nav-link dropdown-toggle" href="#" id="ajout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Formulaire ajout </a>                              
                  <div class="dropdown-menu" aria-labelledby="ajout">
-                    <a class="dropdown-item" href="#">Categorie ajout</a>
-                    <a class="dropdown-item" href="#">News ajout</a>
+                    <a class="dropdown-item" href="?section=creation_news">News ajout</a>
                     <a class="dropdown-item" href="#">partenaria ajout</a>
-                    <a class="dropdown-item" href="#">Membre ajout</a>
+                    <a class="dropdown-item" href="?section=inscription">Membre ajout</a>
                     <a class="dropdown-item" href="#">Media ajout</a>
                 </div>
              </li>
@@ -96,7 +94,7 @@
             </li>
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               ' . $_SESSION['user_info']['prename'] . ' ' . $_SESSION['user_info']['name'] . '
+               <?= $_SESSION['user_info']['prename'] . ' ' . $_SESSION['user_info']['name'] ?>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="user">
                     <a class="dropdown-item" href="?section=deconnexion">Deconnexion</a>
@@ -105,7 +103,7 @@
              </li>  
              </ul>
              <div>
-         ';
-            } ?>
+
+           <?php } ?>
 
 </nav>
