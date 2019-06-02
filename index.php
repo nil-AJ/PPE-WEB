@@ -69,6 +69,9 @@ include('global.php');
                 case 'profil':
                     profil();
                     break;
+                case 'profil_modif':
+                    profil_modif();
+                    break;
 
                 case 'upload':
                     upload();

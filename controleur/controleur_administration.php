@@ -63,7 +63,7 @@ function administration_index()
 }
 
 
-//administration déclaration index
+//administration profil aff
 function profil()
 {
     if (isset($_SESSION['user_info'])) {
@@ -76,7 +76,23 @@ function profil()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
+//administration modif profil
+function profil_modif()
+{
+    if (isset($_SESSION['user_info'])) {
 
+        if ($_SESSION['user_info']['verification']) {
+            if(!empty($_POST["Mname"]) && !empty($_POST["Mprename"]) &&  !empty($_POST["Memail"]) && !empty($_POST["MphoneNumber"]))
+            {
+                include 'model/model_modif_profile.php';
+            }
+            $GLOBALS['u']->add("view/view_administration/profil_/modif_profil.php", 1);
+        }
+    } else {
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
 
 //administration déclaration affichage message
 function administration_message()
@@ -233,6 +249,7 @@ function administration_sup_categorie()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
+
 
 
 

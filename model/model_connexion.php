@@ -14,6 +14,7 @@
     {
         $_SESSION['user_info'] = array(
             'verification'=>true,
+            'idMembre'=>$rep['idMembre'],
             'name'=>$rep['name'],
             'prename'=>$rep['prename'],
             'email'=>$rep['email'],
