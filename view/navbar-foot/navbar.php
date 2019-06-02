@@ -78,9 +78,9 @@
                 </div>
              </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="ajout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="sup" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Formulaire supp </a>                              
-                 <div class="dropdown-menu" aria-labelledby="ajout">
+                 <div class="dropdown-menu" aria-labelledby="sup">
                     <a class="dropdown-item" href="#">Categorie supp</a>
                     <a class="dropdown-item" href="#">News supp</a>
                     <a class="dropdown-item" href="#">partenaria supp</a>
