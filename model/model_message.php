@@ -5,7 +5,7 @@ $bdd = $GLOBALS['bdd'];
 
 $req = $bdd->createBDD()->prepare('SELECT * FROM message ');
 
-if(!$message)
+if(isset($_POST['envoyer_message']))
 {
     $req = $bdd->createBDD()->prepare('INSERT INTO message (name, prename, email,	phoneNumber, type,	content) VALUES(?,?,?,?,?,?,Now())');
     $req->execute(array(

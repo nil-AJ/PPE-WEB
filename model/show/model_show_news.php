@@ -1,7 +1,35 @@
 <?php
 
+
+public function rechercher($tab, $mot_cle)
+{
+    $champs = array();
+    foreach ($tab as $value) {
+        $champs[] = $value . " like :mot_cle";
+    }
+    $chaine = implode(" or ", $champs);
+
+
+    $query = "SELECT * FROM " . $this->table . " WHERE " . $chaine . ";";
+    $data = array(":mot_cle" => "%" . $mot_cle . "%");
+    if ($this->pdo != null) {
+        $recherche = $this->pdo->prepare($query);
+        $recherche->execute($data);
+        $result = $recherche->fetchAll();
+        return $result;
+    } else {
+        return null;
+    }
+}
+
 function show_filt_news()
 {
+
+
+
+
+
+
 
     $bdd = $GLOBALS['bdd'];
     $req = $bdd->createBDD()->query('SELECT * FROM aff_new_cat');
