@@ -15,27 +15,31 @@ include('global.php');
             switch ($_GET['section'])
             {
 
-                case 'membre':
-                    membre();
-                    break;
-
-
-                case 'partenariat':
-                    partenariat();
-                    break;
-                    
-                case 'news':
-                    news();
+                ////view principal
+                case 'home':
+                    home();
                     break;
 
                 case 'media':
                     media();
                     break;
 
-                case 'inscription':
-                    inscription();
+                case 'news':
+                    news();
                     break;
-                
+
+                ////view association
+
+                case 'membre':
+                    membre();
+                    break;
+
+                case 'partenariat':
+                    partenariat();
+                    break;
+
+
+                ////view administration
                 case 'connexion':
                     DEconnexion(true);
                     break;
@@ -48,6 +52,15 @@ include('global.php');
                     administration_index();
                     break;
 
+                ////view administration sup
+
+
+                ////view administration ajout
+
+                case 'inscription':
+                    inscription();
+                    break;
+
                 case 'upload':
                     uploadMember();
                     break;
@@ -56,15 +69,12 @@ include('global.php');
                     creation_news();
                     break;
 
-                case 'home':
-                    home();
-                    break;
-
                 default:
                     throw new Exception(404);
                     break;
             }
-
+                /// api application mobil
+            ///
         }elseif( isset($_GET["call_api"]))
         {
             if($_GET["call_api"] == "true")
@@ -79,6 +89,8 @@ include('global.php');
                 home();
             }
 
+        ////view error
+        
     }catch(Exception $e)
     {
         switch ($e->getMessage()) {
