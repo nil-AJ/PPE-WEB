@@ -13,17 +13,18 @@
             <h5>Menu —</h5>
             <div class="col-12">
                 <ul class="pages">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Membre</a></li>
-                    <li><a href="#">Partenaria</a></li>
+                    <li><a href="?section=home">Home</a></li>
+                    <li><a href="?section=membre">Membre</a></li>
+                    <li><a href="?section=partenariat">Partenaria</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-nav">
             <div class="col-12">
                 <ul class="pages-2 pages">
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Media</a></li>
+                    <li><a href="?section=news ">News</a></li>
+                    <li><a href="?section=media">Media</a></li>
+                    <li><a href="?section=contact">Contact</a></li>
                     <?php
                     $connect = false;
                     if (isset($_SESSION['user_info'])) {
