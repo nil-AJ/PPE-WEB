@@ -17,7 +17,7 @@
             'name'=>$rep['name'],
             'prename'=>$rep['prename'],
             'email'=>$rep['email'],
-            'class'=>$rep['class'],
+            'phoneNumber'=>$rep['phoneNumber'],
             'status'=>$rep['status']);
         header('Location: .?section=administration_index');
         

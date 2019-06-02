@@ -38,7 +38,7 @@
                 <a class="nav-link" href="?section=news">News </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="?section=media">média </a>
+                <a class="nav-link" href="?section=media">Média </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="?section=membre">Membre </a>
@@ -70,27 +70,27 @@
 <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
              <li class=" nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="ajout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Formulaire ajout </a>                              
+                    Ajout Formulaire </a>
                  <div class="dropdown-menu" aria-labelledby="ajout">
-                    <a class="dropdown-item" href="?section=creation_news">News ajout</a>
-                    <a class="dropdown-item" href="#">partenaria ajout</a>
-                    <a class="dropdown-item" href="?section=inscription">Membre ajout</a>
-                    <a class="dropdown-item" href="#">Media ajout</a>
+                    <a class="dropdown-item" href="?section=creation_news">Ajout News</a>
+                    <a class="dropdown-item" href="#">Ajout Partenariat</a>
+                    <a class="dropdown-item" href="?section=inscription">Ajout Membre</a>
+                    <a class="dropdown-item" href="?section=upload">Ajout Media</a>
                 </div>
              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="sup" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Formulaire supp </a>                              
                  <div class="dropdown-menu" aria-labelledby="sup">
-                    <a class="dropdown-item" href="#">Categorie supp</a>
-                    <a class="dropdown-item" href="#">News supp</a>
-                    <a class="dropdown-item" href="#">partenaria supp</a>
-                    <a class="dropdown-item" href="#">Membre supp</a>
-                    <a class="dropdown-item" href="#">Media supp</a>
+                    <a class="dropdown-item" href="#">Catégorie supp</a>
+                    <a class="dropdown-item" href="#">Suppression News</a>
+                    <a class="dropdown-item" href="#">Suppression Partenariat</a>
+                    <a class="dropdown-item" href="#">Suppression Membre</a>
+                    <a class="dropdown-item" href="#">Suppression Média</a>
                 </div>
              </li>
               <li class="nav-item ">
-                <a class="nav-link" href="?section=partenariat">Message</a>
+                <a class="nav-link" href="?section=administration_message">Message</a>
             </li>
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -98,7 +98,7 @@
                 </a>
                  <div class="dropdown-menu" aria-labelledby="user">
                     <a class="dropdown-item" href="?section=deconnexion">Deconnexion</a>
-                    <a class="dropdown-item" href="#">Profil</a>
+                    <a class="dropdown-item" href="?section=profil">Profil</a>
                 </div>
              </li>  
              </ul>

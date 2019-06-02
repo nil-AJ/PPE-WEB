@@ -13,9 +13,14 @@
                 <label for="exampleInputEmail1">Prename</label>
                 <input type="text" class="form-control" id="" name="prename" placeholder="Enter prename">
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">status</label>
-                <input type="text" class="form-control" id="" name="status" placeholder="Enter status">
+            <div class="form-group ">
+                <label for="role"  class="col-form-label">Status</label>
+                    <select id="role" name="status" class="custom-select">
+                        <option value="administrator">Administrator</option>
+                        <option value="author">Author</option>
+                        <option value="editor">Editor</option>
+                        <option value="contributor">Contributor</option>
+                    </select>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

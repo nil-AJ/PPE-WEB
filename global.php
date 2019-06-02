@@ -1,7 +1,7 @@
 <?php
 include 'model/class/Used.class.php';
 include 'model/class/ConnexionBDD.class.php';
-include 'model/class/API_Rest.class.php';
+include 'model/class/APIRest.class.php';
 
 const BDD_NAME = "PPE";
 

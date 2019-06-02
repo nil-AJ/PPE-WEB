@@ -1,6 +1,6 @@
 <?php
 
-function uploadMember()
+function upload()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
@@ -10,6 +10,7 @@ function uploadMember()
 
             if (isset($_FILES['userfile']) && isset($_POST['evenement'])) {
                 include 'model/upload/model_media_upload.php';
+
             }
 
             $GLOBALS['u']->add("view/view_administration/form_ajou/upload.php", 1);
@@ -28,7 +29,6 @@ function DEconnexion($mode)
         if (isset($_POST['email']) && isset($_POST['password'])) {
             include 'model/model_connexion.php';
         }
-        $test = "test";
         $GLOBALS['u']->add("view/view_administration/connexion.php", 1);
 
     } else {//Deconnexion
@@ -62,13 +62,38 @@ function administration_index()
     }
 }
 
+
+//administration déclaration index
+function profil()
+{
+    if (isset($_SESSION['user_info'])) {
+
+        if ($_SESSION['user_info']['verification']) {
+            $GLOBALS['u']->add("view/view_administration/profil.php", 1);
+        }
+    } else {
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
+
+
 //administration déclaration affichage message
 function administration_message()
 {
     if (isset($_SESSION['user_info'])) {
 
         if ($_SESSION['user_info']['verification']) {
+
+            if(!empty($_POST["idMess"]))
+            {
+                include 'model/delete/model_delete_message.php';
+            }
+
+            include 'model/show/model_show_contact.php';
+
             $GLOBALS['u']->add("view/view_administration/aff_message.php", 1);
+
         }
     } else {
 
@@ -208,3 +233,6 @@ function administration_sup_categorie()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
+
+
+

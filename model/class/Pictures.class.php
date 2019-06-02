@@ -52,7 +52,7 @@ class Pictures
                 $this->setPicture_extension(getimagesize($picture_path)['mime']);
                 $this->setPicture_size(filesize($picture_path));
             }else {
-                throw new Exception('Fichier inexistant');
+                throw new Exception('Fichier inexistant '.var_dump($picture_path));
             }
         }else {
             echo self::HELP;

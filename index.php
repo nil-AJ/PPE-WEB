@@ -54,7 +54,9 @@ include('global.php');
                 case 'administration_index':
                     administration_index();
                     break;
-
+                case 'administration_message':
+                    administration_message();
+                    break;
                 ////view administration sup
 
 
@@ -64,8 +66,12 @@ include('global.php');
                     inscription();
                     break;
 
+                case 'profil':
+                    profil();
+                    break;
+
                 case 'upload':
-                    uploadMember();
+                    upload();
                     break;
 
                 case 'creation_news':

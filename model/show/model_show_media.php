@@ -9,8 +9,8 @@
         foreach($req->fetchAll() as $media)
         {?>
             <div class="">
-                    <figure class="imga effect-X">
-                        <img class="font" src="<?= $media['link']?> "/>    
+                <figure class="imga effect-X">
+                        <img style="height: 30%; width: 30%; border: solid black 2px" class="font" src="<?= $media['link']?> "/>
                 </figure>
             </div>
         <?php

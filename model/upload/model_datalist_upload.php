@@ -7,11 +7,11 @@
 
     if($arg)
     {
-        $req  = $bdd->createBDD()->query('SELECT title FROM album');
+        $req  = $bdd->createBDD()->query('SELECT evenement FROM media');
         ob_start();
-        foreach($req as $opt)
+        foreach(array_unique($req) as $opt)
         {
-            echo '<option value="'.$opt['title'].'">';
+            echo '<option value="'.$opt['evenement'].'">';
         }
         $req->closeCursor();
     
