@@ -2,7 +2,8 @@
 
  function membre()
  {
-   $GLOBALS['u']->add("view/view_association/membre.php",1);
+     include 'model/show/model_show_membre.php';
+     $GLOBALS['u']->add("view/view_association/membre.php",1);
  }
 
  function logo()
@@ -12,7 +13,8 @@
 
  function partenariat()
  {
-   $GLOBALS['u']->add("view/view_association/partenariat.php",1);
+     include 'model/show/model_show_partenariat.php';
+     $GLOBALS['u']->add("view/view_association/partenariat.php",1);
  }
 function message()
 {
