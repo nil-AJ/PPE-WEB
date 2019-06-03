@@ -73,7 +73,7 @@
                     Ajout Formulaire </a>
                  <div class="dropdown-menu" aria-labelledby="ajout">
                     <a class="dropdown-item" href="?section=creation_news">Ajout News</a>
-                    <a class="dropdown-item" href="#">Ajout Partenariat</a>
+                    <a class="dropdown-item" href="?section=">Ajout Partenariat</a>
                     <a class="dropdown-item" href="?section=inscription">Ajout Membre</a>
                     <a class="dropdown-item" href="?section=upload">Ajout Media</a>
                 </div>
@@ -82,11 +82,10 @@
                 <a class="nav-link dropdown-toggle" href="#" id="sup" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Formulaire supp </a>                              
                  <div class="dropdown-menu" aria-labelledby="sup">
-                    <a class="dropdown-item" href="#">Catégorie supp</a>
-                    <a class="dropdown-item" href="#">Suppression News</a>
-                    <a class="dropdown-item" href="#">Suppression Partenariat</a>
-                    <a class="dropdown-item" href="#">Suppression Membre</a>
-                    <a class="dropdown-item" href="#">Suppression Média</a>
+                    <a class="dropdown-item" href="?section=administration_sup_categorie">Catégorie supp</a>
+                    <a class="dropdown-item" href="?section=administration_sup_news">Suppression News</a>
+                    <a class="dropdown-item" href="?section=administration_sup_partenaria">Suppression Partenariat</a>
+                    <a class="dropdown-item" href="?section=administration_sup_media">Suppression Média</a>
                 </div>
              </li>
               <li class="nav-item ">

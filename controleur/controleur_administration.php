@@ -76,14 +76,14 @@ function profil()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
+
 //administration modif profil
 function profil_modif()
 {
     if (isset($_SESSION['user_info'])) {
 
         if ($_SESSION['user_info']['verification']) {
-            if(!empty($_POST["Mname"]) && !empty($_POST["Mprename"]) &&  !empty($_POST["Memail"]) && !empty($_POST["MphoneNumber"]))
-            {
+            if (!empty($_POST["Mname"]) && !empty($_POST["Mprename"]) && !empty($_POST["Memail"]) && !empty($_POST["MphoneNumber"])) {
                 include 'model/model_modif_profile.php';
             }
             $GLOBALS['u']->add("view/view_administration/profil_/modif_profil.php", 1);
@@ -94,28 +94,6 @@ function profil_modif()
     }
 }
 
-//administration déclaration affichage message
-function administration_message()
-{
-    if (isset($_SESSION['user_info'])) {
-
-        if ($_SESSION['user_info']['verification']) {
-
-            if(!empty($_POST["idMess"]))
-            {
-                include 'model/delete/model_delete_message.php';
-            }
-
-            include 'model/show/model_show_contact.php';
-
-            $GLOBALS['u']->add("view/view_administration/aff_message.php", 1);
-
-        }
-    } else {
-
-        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
-    }
-}
 
 /////
 /// ////////////////
@@ -124,7 +102,7 @@ function administration_message()
 /// Page d'ajout
 
 
-//ajout membre 1
+//ajout membre
 function inscription()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -144,7 +122,7 @@ function inscription()
     }
 }
 
-//ajout news 2
+//ajout news
 function creation_news()
 {
     if (isset($_SESSION['user_info'])) {
@@ -164,7 +142,7 @@ function creation_news()
 }
 
 
-// ajout partenaria 4
+// ajout partenaria
 function administration_ajoue_partenaria()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
@@ -183,13 +161,62 @@ function administration_ajoue_partenaria()
 /// ////////////////////
 /// Page de supretion
 
+//administration déclaration affichage message
+function administration_message()
+{
+    if (isset($_SESSION['user_info'])) {
 
-// supretion membre 1
+        if ($_SESSION['user_info']['verification']) {
+
+            if (!empty($_POST["idMess"])) {
+                include 'model/delete/model_delete_message.php';
+            }
+
+            include 'model/show/model_show_contact.php';
+
+            $GLOBALS['u']->add("view/view_administration/aff_message.php", 1);
+
+        }
+    } else {
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
+
+//supretion média
+function administration_sup_media()
+{
+    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
+    {
+        if ($_SESSION['user_info']['verification']) {
+
+            if (!empty($_POST["idMed"])) {
+                include 'model/delete/model_delete_media.php';
+            }
+
+            include 'model/show/show_Smedia.php';
+
+            $GLOBALS['u']->add("view/view_administration/form_sup/sup_media.php", 1);
+
+        } else {
+
+            throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+        }
+    }
+}
+
+// supretion membre
 function administration_sup_membre()
 {
 
-    if (!empty($_POST['name']) && !empty($_POST['prename']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['status'])) {
+    if ($_SESSION['user_info']['verification']) {
 
+        if (!empty($_POST["idMeb"])) {
+
+            include 'model/delete/model_delete_membre.php';
+
+        }
+        include 'model/show/show_Smembre.php';
 
         $GLOBALS['u']->add("view/view_administration/form_sup/sup_membre.php", 1);
     } else {
@@ -199,11 +226,16 @@ function administration_sup_membre()
 }
 
 
-//supretion news 2
+//supretion news
 function administration_sup_news()
 {
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
+    if ($_SESSION['user_info']['verification']) {
+
+        if (!empty($_POST["idNew"])) {
+            include 'model/delete/model_delete_news.php';
+        }
+
+        include 'model/show/show_Snews.php';
 
         $GLOBALS['u']->add("view/view_administration/form_sup/sup_news.php", 1);
     } else {
@@ -211,37 +243,16 @@ function administration_sup_news()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
-
-//supretion média 3
-function administration_sup_media()
-{
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
-
-        $GLOBALS['u']->add("view/view_administration/form_sup/sup_media.php", 1);
-    } else {
-
-        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
-    }
-}
-
-//supretion partenaria 4
-function administration_sup_partenaria()
-{
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
-
-        $GLOBALS['u']->add("view/view_administration/form_sup/sup_partenaria.php", 1);
-    } else {
-
-        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
-    }
-}
-//supretion categorie 5
+//supretion categorie
 function administration_sup_categorie()
 {
-    if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
-    {
+    if ($_SESSION['user_info']['verification']) {
+
+        if (!empty($_POST["idCate"])) {
+            include 'model/delete/model_delete_categorie.php';
+        }
+
+    include 'model/show/show_Scategorie.php';
 
         $GLOBALS['u']->add("view/view_administration/form_sup/sup_categorie.php", 1);
     } else {
@@ -249,6 +260,26 @@ function administration_sup_categorie()
         throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
     }
 }
+
+//supretion partenaria
+function administration_sup_partenaria()
+{
+    if ($_SESSION['user_info']['verification']) {
+
+        if (!empty($_POST["idPart"])) {
+            include 'model/delete/model_delete_partenaria.php';
+        }
+
+        include 'model/show/show_Spartenaria.php';
+
+        $GLOBALS['u']->add("view/view_administration/form_sup/sup_partenaria.php", 1);
+    } else {
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
+
+
 
 
 

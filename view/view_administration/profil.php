@@ -7,7 +7,7 @@
             <div class="list-group ">
                 <a href="?section=profil" class="list-group-item list-group-item-action active">Profil</a>
                 <a href="?section=profil_modif" class="list-group-item list-group-item-action">Modifier</a>
-                <a href="#" class="list-group-item list-group-item-action">Suprimer</a>
+                <a href="?section=administration_sup_membre" class="list-group-item list-group-item-action">Suprimer</a>
             </div>
         </div>
         <div class="col-md-9">

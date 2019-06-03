@@ -14,8 +14,9 @@ include('global.php');
         {
             switch ($_GET['section'])
             {
-
+                ////
                 ////view principal
+                ///
                 case 'home':
                     home();
                     break;
@@ -27,9 +28,9 @@ include('global.php');
                 case 'news':
                     news();
                     break;
-
+                ////
                 ////view association
-
+                ////
                 case 'membre':
                     membre();
                     break;
@@ -41,8 +42,9 @@ include('global.php');
                     message();
                     break;
 
-
+                ////
                 ////view administration
+                ///
                 case 'connexion':
                     DEconnexion(true);
                     break;
@@ -57,11 +59,29 @@ include('global.php');
                 case 'administration_message':
                     administration_message();
                     break;
+                ////
                 ////view administration sup
+                ////
+                case 'administration_sup_media':
+                    administration_sup_media();
+                    break;
 
+                case 'administration_sup_membre':
+                    administration_sup_membre();
+                    break;
+                case 'administration_sup_news':
+                    administration_sup_news();
+                    break;
+                case 'administration_sup_categorie':
+                    administration_sup_categorie();
+                    break;
+                case 'administration_sup_partenaria':
+                    administration_sup_partenaria();
+                    break;
 
+                ////
                 ////view administration ajout
-
+                ////
                 case 'inscription':
                     inscription();
                     break;
@@ -80,12 +100,15 @@ include('global.php');
                 case 'creation_news':
                     creation_news();
                     break;
-
+                ////
+                ////
+                ////
                 default:
                     throw new Exception(404);
                     break;
             }
-                /// api application mobil
+            ////
+            /// api application mobil
             ///
         }elseif( isset($_GET["call_api"]))
         {
@@ -100,9 +123,9 @@ include('global.php');
             {
                 home();
             }
-
+        ////
         ////view error
-
+        ////
     }catch(Exception $e)
     {
         switch ($e->getMessage()) {
