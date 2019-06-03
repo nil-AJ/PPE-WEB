@@ -41,6 +41,9 @@ include('global.php');
                 case 'message':
                     message();
                     break;
+                case 'candidature':
+                    candidature();
+                    break;
 
                 ////
                 ////view administration
@@ -99,6 +102,9 @@ include('global.php');
 
                 case 'creation_news':
                     creation_news();
+                    break;
+                case 'administration_ajoue_partenaria':
+                    administration_ajoue_partenaria();
                     break;
                 ////
                 ////

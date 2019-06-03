@@ -147,7 +147,15 @@ function administration_ajoue_partenaria()
 {
     if (isset($_SESSION['user_info'])) //Toutes les fonction réservées au membres devront etre dans ces deux condition
     {
+        if (!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['dateStart']) && !empty($_POST['dateEnd']) && !empty($_POST['adder'])) {
 
+            include 'model/model_partenaria.php';
+
+            echo '<h4 style="position: absolute; margin-top: 45%; margin-left: 40%; color: #2bff00;">envoyer</h4>';
+        }
+        else{
+            echo '<h4 style="position: absolute; margin-top: 45%; margin-left: 40%; color: red;">err ajout a la bdd impossible</h4>';
+        }
         $GLOBALS['u']->add("view/view_administration/form_ajou/creation_partenaria.php", 1);
     } else {
 

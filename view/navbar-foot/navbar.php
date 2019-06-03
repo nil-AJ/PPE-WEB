@@ -49,6 +49,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="?section=message">Contact</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="?section=candidature">Nous rejoindre</a>
+            </li>
         </ul>
             <?php
             $connect = false;
@@ -73,7 +76,7 @@
                     Ajout Formulaire </a>
                  <div class="dropdown-menu" aria-labelledby="ajout">
                     <a class="dropdown-item" href="?section=creation_news">Ajout News</a>
-                    <a class="dropdown-item" href="?section=">Ajout Partenariat</a>
+                    <a class="dropdown-item" href="?section=administration_ajoue_partenaria">Ajout Partenariat</a>
                     <a class="dropdown-item" href="?section=inscription">Ajout Membre</a>
                     <a class="dropdown-item" href="?section=upload">Ajout Media</a>
                 </div>
