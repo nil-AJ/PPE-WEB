@@ -33,6 +33,7 @@ function candidature()
 
         include 'model/model_candidature.php';
 
+
         echo '<h4 style="position: absolute; margin-top: 45%; margin-left: 40%; color: #2bff00;">envoyer</h4>';
     }
     else{

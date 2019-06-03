@@ -287,7 +287,23 @@ function administration_sup_partenaria()
     }
 }
 
+//supretion partenaria
+function administration_sup_candidature()
+{
+    if ($_SESSION['user_info']['verification']) {
 
+        if (!empty($_POST["idCand"])) {
+            include 'model/delete/model_delete_candidature.php';
+        }
+
+        include 'model/show/show_Scandidature.php';
+
+        $GLOBALS['u']->add("view/view_administration/form_sup/sup_candidature.php", 1);
+    } else {
+
+        throw new Exception(404); // On redirige l'utilisateur vers une page 404 si il essaye d'accéder a une page auquel il n'as pas accés
+    }
+}
 
 
 

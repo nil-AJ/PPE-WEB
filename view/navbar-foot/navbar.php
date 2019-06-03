@@ -89,11 +89,15 @@
                     <a class="dropdown-item" href="?section=administration_sup_news">Suppression News</a>
                     <a class="dropdown-item" href="?section=administration_sup_partenaria">Suppression Partenariat</a>
                     <a class="dropdown-item" href="?section=administration_sup_media">Suppression Média</a>
+
                 </div>
              </li>
               <li class="nav-item ">
                 <a class="nav-link" href="?section=administration_message">Message</a>
             </li>
+            <li class="nav-item ">
+                     <a class="nav-link" href="?section=administration_sup_candidature">Candidature</a>
+             </li>
              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <?= $_SESSION['user_info']['prename'] . ' ' . $_SESSION['user_info']['name'] ?>

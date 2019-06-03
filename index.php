@@ -81,6 +81,9 @@ include('global.php');
                 case 'administration_sup_partenaria':
                     administration_sup_partenaria();
                     break;
+                case 'administration_sup_candidature':
+                    administration_sup_candidature();
+                    break;
 
                 ////
                 ////view administration ajout

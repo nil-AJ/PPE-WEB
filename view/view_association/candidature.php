@@ -3,7 +3,6 @@
     <div class="align-content-center justify-content-center">
         <div class="form-area">
             <form  style="padding-top: 80px; padding-bottom: 80px" method="POST" action="">
-                <br style="clear:both">
                 <h3 style="margin-bottom: 25px; text-align: center;">Nous rejoindre</h3>
                 <div class="form-group">
                     <input type="text" class="form-control" name="prename" placeholder="Prename" required>
