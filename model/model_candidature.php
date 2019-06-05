@@ -18,6 +18,3 @@ $req->execute(array(
 $_POST = array();//On vide le POST
 
 
-
-?>
-
