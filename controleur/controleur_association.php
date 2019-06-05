@@ -32,15 +32,11 @@ function message()
 }
 function candidature()
 {
-    if (!empty($_POST['name']) && !empty($_POST['prename']) && !empty($_POST['email']) && !empty($_POST['phoneNumber']) && !empty($_POST['motivation']) && !empty($_POST['class'])) {
+    if (!empty($_POST['Cname']) && !empty($_POST['Cprename']) && !empty($_POST['Cemail']) && !empty($_POST['CphoneNumber']) && !empty($_POST['Cdescription']) && !empty($_POST['Cclass'])) {
 
         include 'model/model_candidature.php';
 
-
         echo '<h4 style="position: absolute; margin-top: 45%; margin-left: 40%; color: #2bff00;">envoyer</h4>';
-    }
-    else{
-        echo '<h4 style="position: absolute; margin-top: 45%; margin-left: 40%; color: red;">err votre candidature a pas était envoyer</h4>';
     }
     $GLOBALS['u']->add("view/view_association/candidature.php",1);
 
