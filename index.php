@@ -109,6 +109,7 @@ include('global.php');
                 case 'administration_ajoue_partenaria':
                     administration_ajoue_partenaria();
                     break;
+                    
                 ////
                 ////
                 ////

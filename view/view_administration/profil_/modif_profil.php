@@ -22,7 +22,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                                <form action="?section=profil" method="post">
+                                <form action="" method="post">
                                     <div class="form-group row">
                                         <label for="prename" class="col-4 col-form-label">Prename</label>
                                         <div class="col-8">

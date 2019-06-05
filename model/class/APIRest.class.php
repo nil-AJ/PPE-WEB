@@ -47,7 +47,7 @@ class ApiRest extends ConnexionBDD
         {
             parent::createBDD()->query("DELETE FROM ".$tb." WHERE ".$column."='".$id."'");
 
-            $this->response([["Response"=>20]]);
+            $this->response([["Response"=>200]]);
         }
     }
 
@@ -64,7 +64,7 @@ class ApiRest extends ConnexionBDD
                 {
                     $sql="UPDATE ".$t." SET ".$col." = '".$value."' WHERE ".$condition[0]." = '".$condition[1]."'";
                     $this->response([
-                        "Success"=>20,
+                        "Success"=>200,
                     ]);
                 }else{
                     $this->response([
@@ -84,7 +84,7 @@ class ApiRest extends ConnexionBDD
             $re = parent::insertRow($table,$column);
             if($re != 2 || $re !=false)
             {
-                $this->response([["Response"=>20,
+                $this->response([["Response"=>200,
                 "Success"=>$re]]);
             }else{
                 $this->response([["Response"=>"500",
@@ -98,7 +98,7 @@ class ApiRest extends ConnexionBDD
 
     public function verification($table=null,$r=["user"=>"","password"=>""], $user,$password)
     {
-        if(!empty($table) && $row[0]=!"")
+        if(!empty($table) && !empty($r))
         {
         $rows["user"] = $r[0];
         $rows["password"] = $r[1];
@@ -112,7 +112,7 @@ class ApiRest extends ConnexionBDD
 
          if($rep)
          {
-             $rep["Response"]=20;
+             $rep["Response"]=200;
              $rep["User"]= true;
              return $rep;
          }else{

@@ -105,6 +105,7 @@
                  <div class="dropdown-menu" aria-labelledby="user">
                     <a class="dropdown-item" href="?section=deconnexion">Deconnexion</a>
                     <a class="dropdown-item" href="?section=profil">Profil</a>
+                    <a class="dropdown-item" href="?section=administration_modif_password">Mot de passe </a>
                 </div>
              </li>  
              </ul>
